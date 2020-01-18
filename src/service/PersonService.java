@@ -79,8 +79,8 @@ public class PersonService {
         Person person = entityManager.find(Person.class,6L);
 
         //entityManager.detach(person);
-        person.setName("Reza");
-        person.setFamily("Bahador");
+        person.setName("nn");
+        person.setFamily("jj");
         //entityManager.persist(person);
 
         entityTransaction.commit();
@@ -139,7 +139,7 @@ public class PersonService {
     public static void findByWhere() {
         EntityManager entityManager = JPA.getEntityManager();
         Query query = entityManager.createNativeQuery("SELECT * FROM PERSON WHERE FIRST_NAME LIKE :N OR LAST_NAME LIKE :F", Person.class);
-        query.setParameter("N", "%Amir%");
+        query.setParameter("N", "%A%");
         query.setParameter("F", "%B%");
         List<Person> personList = query.getResultList();
         entityManager.close();
@@ -179,8 +179,8 @@ public class PersonService {
         entityTransaction.begin();
 
         Person person = new Person();
-        person.setName("Amirsam");
-        person.setFamily("Bahador");
+        person.setName("negin");
+        person.setFamily("jafari");
         entityManager.persist(person);
 
         entityTransaction.commit();
